@@ -58,13 +58,6 @@ class HomePage extends StatefulWidget {
 // _ private class
 
 
-
-
-
-
-
-
-
 class _HomePageState extends State<HomePage> {
 
   // call when onPressed call 
@@ -86,12 +79,17 @@ Widget _bodyWidget(){
   return new Container(
     padding: const EdgeInsets.all(8.0),
     child: new Center(
+      // main axis and cross axis
       child: new Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          new Text(myText),
+          new Text(myText, style: new TextStyle(fontSize: 30.0),),
           new RaisedButton(
-            child: new Text("Click"),
+            child: new Text("Click", style: new TextStyle(color: Colors.white,
+            fontSize: 10.0),),
             onPressed: _changeText,
+            color: Colors.redAccent,
+
           )
         ],
       ),
