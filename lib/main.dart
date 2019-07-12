@@ -4,7 +4,9 @@ void main(){
   // for run a app, pass app widget (class), pass class object
   // instance of materialApp
   // provide home and new text in home
-  runApp(new MaterialApp(home: new Text("Hello world"),));
+
+
+  // runApp(new MaterialApp(home: new Text("Hello world"),));
   
   // in flutter everything is a widget, (button, text etc)
   // Widgets are divide into two:
@@ -17,4 +19,26 @@ void main(){
   // (checkbox, slider, Inkwell)
 
 
+  // app start
+  // stateless example
+  runApp(new MyApp());
+
 } 
+
+class MyApp extends StatelessWidget {
+  @override
+  //build method called, return container or page
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: "My App",
+      // home for home sceen
+      // scaffold, provide blank structure
+      home: new Scaffold(
+          appBar: new AppBar(
+            title: new Text("Home Page"),
+          ),
+          body: new Center(child: new Text("Hello world"),),
+      )
+    );
+  }
+}
