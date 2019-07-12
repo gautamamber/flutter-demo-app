@@ -57,14 +57,57 @@ class HomePage extends StatefulWidget {
 
 // _ private class
 
+
+
+
+
+
+
+
+
 class _HomePageState extends State<HomePage> {
+
+  // call when onPressed call 
+  String myText = "My text";
+  void _changeText(){
+    setState(() {
+        if(myText.startsWith("H"))
+        {
+        myText = "Welcome to my first flutter app";
+        }
+        else{
+          myText = "Hello world";
+        }
+    });
+  }
+
+  // give padding, margin, height, (like css)
+Widget _bodyWidget(){
+  return new Container(
+    padding: const EdgeInsets.all(8.0),
+    child: new Center(
+      child: new Column(
+        children: <Widget>[
+          new Text(myText),
+          new RaisedButton(
+            child: new Text("Click"),
+            onPressed: _changeText,
+          )
+        ],
+      ),
+    ),
+
+  );
+}
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("Home page"),
       ),
-      body: new Center(child: new Text("This is statefull widget"),),
+      body: _bodyWidget()
+      // body: new Center(child: new Text("This is statefull widget"),),
     );
   }
 }
