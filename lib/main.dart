@@ -34,6 +34,11 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: "My App",
       home: new HomePage(),
+      theme: new ThemeData(
+        primarySwatch: Colors.green,
+        brightness: Brightness.dark,
+        accentColor: Colors.red
+      ),
       // home for home sceen
       // scaffold, provide blank structure
       // home: new Scaffold(
