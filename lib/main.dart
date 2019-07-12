@@ -89,13 +89,13 @@ Widget _bodyWidget(){
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           new Text(myText, style: new TextStyle(fontSize: 30.0),),
-          new RaisedButton(
-            child: new Text("Click", style: new TextStyle(color: Colors.white,
-            fontSize: 10.0),),
-            onPressed: _changeText,
-            color: Colors.redAccent,
+          // new RaisedButton(
+          //   child: new Text("Click", style: new TextStyle(color: Colors.white,
+          //   fontSize: 10.0),),
+          //   onPressed: _changeText,
+          //   color: Colors.redAccent,
 
-          )
+          // )
         ],
       ),
     ),
@@ -109,7 +109,11 @@ Widget _bodyWidget(){
       appBar: new AppBar(
         title: new Text("Home page"),
       ),
-      body: _bodyWidget()
+      body: _bodyWidget(),
+      floatingActionButton: new FloatingActionButton(
+        child: new Icon(Icons.add),
+        onPressed: _changeText,
+      ),
       // body: new Center(child: new Text("This is statefull widget"),),
     );
   }
