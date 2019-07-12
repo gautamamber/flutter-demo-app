@@ -25,20 +25,46 @@ void main(){
 
 } 
 
+
+// stateless widget
 class MyApp extends StatelessWidget {
   @override
   //build method called, return container or page
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: "My App",
+      home: new HomePage(),
       // home for home sceen
       // scaffold, provide blank structure
-      home: new Scaffold(
-          appBar: new AppBar(
-            title: new Text("Home Page"),
-          ),
-          body: new Center(child: new Text("Hello world"),),
-      )
+      // home: new Scaffold(
+      //     appBar: new AppBar(
+      //       title: new Text("Home Page"),
+      //     ),
+          // body: new Center(child: new Text("Hello world"),),
+      // )
+    );
+  }
+}
+
+
+
+// Statefull widget
+
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+// _ private class
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Home page"),
+      ),
+      body: new Center(child: new Text("This is statefull widget"),),
     );
   }
 }
